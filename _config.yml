@@ -36,9 +36,10 @@ social:
   email: gabriel.radzki@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://www.linkedin.com/in/gabrielradzki
+    - https://github.com/radzki
     - https://twitter.com/gbradzki      # change to your twitter homepage
     - https://github.com/radzki      # change to your github homepage
+    - https://www.linkedin.com/in/gabrielradzki
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
