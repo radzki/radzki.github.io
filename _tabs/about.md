@@ -4,5 +4,4 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-{: .prompt-tip }
+<embed style="width:100%; height: 100rem" src="/assets/documents/CV_GabrielRadzki.pdf#navpanes=0" type="application/pdf">
