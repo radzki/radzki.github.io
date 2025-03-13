@@ -1,17 +1,54 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Parent Page - GA4 PostMessage POC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandbox Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            font-size: 18px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        a:hover {
+            background: #0056b3;
+        }
+    </style>
 </head>
-
 <body>
-    <h1>Parent Page</h1>
-    <p>This page contains an iframe that will send GA events via postMessage.</p>
-    <iframe
-        src="https://brandedweb-next.staging.arcusplatform.io/components/widgets/appointments/view/f1323df99/services"
-        width="1200" height="500" title="Child iFrame"></iframe>
+    <div class="container">
+        <h1>Hey!</h1>
+        <p>This used to be another page, but now I'm using it as a sandbox.<br>
+        I will reorganize it when I have time :)</p>
+        <a href="sandbox.html">Go to Sandbox</a>
+    </div>
 </body>
-
 </html>
