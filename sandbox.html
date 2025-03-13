@@ -7,67 +7,11 @@
 </head>
 
 <body>
-    <h1>Parent Page</h1>
-    <p>This page contains an iframe that will send GA events via postMessage.</p>
-    <iframe
-        src="https://brandedweb-next.staging.arcusplatform.io/components/widgets/appointments/view/6a159ad74/services"
-        width="1200" height="500" title="Child iFrame"></iframe>
+    <!-- Mindbody Appointments widget begin -->
+    <div class="mindbody-widget" data-widget-type="Appointments" data-widget-id="6a49ad74"></div>
+    <script async src="https://brandedweb-next.staging.arcusplatform.io/embed/widget.js"></script>
+    <!-- Mindbody Appointments widget end -->
+
 </body>
-<script>
-    /**
-     * Dynamically loads the GA4 gtag.js script using the provided primary measurement ID.
-     * If the script is already loaded, it does nothing.
-     */
-
-    function isGAScriptSrcPresent() {
-        return document.querySelector('script[src*="googletagmanager.com/gtag/js"]')
-    }
-
-    function loadGAScript() {
-        const script = document.createElement('script')
-        script.type = 'text/javascript'
-        script.async = true
-        script.src = 'https://www.googletagmanager.com/gtag/js'
-        document.head.appendChild(script)
-
-        window.dataLayer = window.dataLayer || []
-        window.gtag =
-            window.gtag ||
-            function () {
-                /*
-                 * `arguments` is a built-in object in JavaScript that contains
-                 * all the arguments passed to a function
-                 * we cannot use ...args here, so we left as ES5
-                 * https://stackoverflow.com/a/49046840
-                 */
-                window.dataLayer.push(arguments)
-            }
-        window.gtag('js', new Date())
-    }
-
-    function initGAListener() {
-        if (!isGAScriptSrcPresent() && !window.gtag) {
-            loadGAScript()
-        }
-        window.addEventListener('message', (event) => {
-            if (event.data?.type === 'GA_EVENT') {
-                const payload = event.data.payload
-
-                if (payload[0] === 'js') {
-                    return
-                }
-
-                if (window.gtag)
-                    // Forward the event to the parent Google Analytics
-                    window.gtag(...payload)
-            }
-        })
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        initGAListener()
-    }, false);
-
-</script>
 
 </html>
