@@ -1,63 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandbox Landing Page</title>
+    <title>Site Under Maintenance</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
         body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-            text-align: center;
-            margin: 0;
+            font-family: 'Inter', sans-serif;
         }
-
-        .container {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-
-        h1 {
-            color: #333;
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
         }
-
-        p {
-            color: #666;
-            font-size: 18px;
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
         }
-
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            text-decoration: none;
-            background: #007BFF;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
         }
-
-        a:hover {
-            background: #0056b3;
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+        
+        .card-shadow {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
     </style>
 </head>
-
-<body>
-    <div class="container">
-        <h1>Hey!</h1>
-        <p>This used to be <a href="https://radzki.github.io/blog">another page</a>, but now I'm using it as a
-            sandbox.</p>
-        <p>I will reorganize it when I have time :)</p>
-        <a href="sandbox.html">Go to Sandbox</a>
+<body class="gradient-bg min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-2xl w-full">
+        <!-- Main Card -->
+        <div class="bg-white rounded-2xl card-shadow p-8 md:p-12 fade-in">
+            <!-- Icon -->
+            <div class="flex justify-center mb-6">
+                <div class="floating">
+                    <i class="fas fa-tools text-6xl text-purple-600"></i>
+                </div>
+            </div>
+            
+            <!-- Main Heading -->
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 text-center mb-4">
+                Hey there! 👋
+            </h1>
+            
+            <!-- Status Badge -->
+            <div class="flex justify-center mb-6">
+                <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">
+                    <span class="pulse w-2 h-2 bg-yellow-400 rounded-full mr-2"></span>
+                    Temporarily Under Maintenance
+                </span>
+            </div>
+            
+            <!-- Message -->
+            <div class="text-center text-gray-600 space-y-4 mb-8">
+                <p class="text-lg">
+                    This used to be a blog, but some recent changes to GitHub Actions and DNS configurations have temporarily broken things.
+                </p>
+                <p class="text-lg">
+                    I don't have time to fix it right this moment, but I promise I'll get to it soon! 
+                </p>
+                <p class="text-lg font-medium text-purple-700">
+                    Thanks for your patience and understanding! 💜
+                </p>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="mb-8">
+                <div class="flex justify-between text-sm text-gray-500 mb-2">
+                    <span>Progress</span>
+                    <span>Will fix soon™</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                    <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-3 rounded-full" 
+                         style="width: 65%; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Social Links (Optional - customize or remove) -->
+            <div class="flex justify-center space-x-4 pt-6 border-t border-gray-200">
+                <a href="https://github.com" 
+                   class="text-gray-400 hover:text-gray-600 transition-colors duration-200"
+                   title="GitHub">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="https://twitter.com" 
+                   class="text-gray-400 hover:text-gray-600 transition-colors duration-200"
+                   title="Twitter">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+                <a href="mailto:your.email@example.com" 
+                   class="text-gray-400 hover:text-gray-600 transition-colors duration-200"
+                   title="Email">
+                    <i class="fas fa-envelope text-2xl"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="text-center mt-8 text-white/80 text-sm fade-in">
+            <p>Check back soon for updates!</p>
+        </div>
     </div>
+    
+    <!-- Background decoration -->
+    <div class="fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden -z-10">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+        <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div class="absolute bottom-1/4 left-1/3 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+    </div>
+    
+    <style>
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+    </style>
 </body>
-
 </html>
